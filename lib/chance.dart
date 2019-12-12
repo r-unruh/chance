@@ -22,13 +22,13 @@ class Chance {
   int integer({int min, int max, int minMax}) {
     _checkArguments(min: min, max: max, minMax: minMax);
 
-    if (min == null && max == null && minMax == null)
+    if (min == null && max == null && minMax == null) {
       return integer(min: _minInt, max: _maxInt);
+    }
 
-    if (min == null && max != null)
+    if (min == null && max != null) {
       min = 0;
-
-    else if (minMax != null) {
+    } else if (minMax != null) {
       min = -minMax.abs();
       max = minMax.abs();
     }
