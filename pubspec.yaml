@@ -1,8 +1,6 @@
 name: chance
 version: 1.0.0
 description: A minimalist generator of random numbers - inspired by chance.js
-authors:
-  - Rudolf Unruh <unruh@blausoft.net>
 homepage: https://github.com/blausoft/chance
 
 environment:
