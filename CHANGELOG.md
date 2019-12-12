@@ -1,3 +1,7 @@
+## 1.0.0+1
+
+* Fix more hints
+
 ## 1.0.0
 
 * Fix hints
