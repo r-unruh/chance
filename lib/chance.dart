@@ -1,17 +1,16 @@
 import 'dart:math';
 
-/// The main class that has to be instantiated.
+/// The main class that provides all the functions.
 ///
 /// Example:
 /// ```
-/// var chance = Chance();
-/// int number = chance.integer(min: 10, max: 20);
+/// int number = Chance.integer(min: 10, max: 20);
 /// ```
 class Chance {
   // Maximum integer that JS supports.
   static const _maxInt = 9007199254740992;
   static const _minInt = -_maxInt;
-  final _random = Random();
+  static final Random _random = Random();
 
   /// Returns a random integer.
   ///
@@ -19,7 +18,7 @@ class Chance {
   /// Leave out all arguments to get a value between [_minInt] and [_maxInt].
   /// Provide (only) [minMax] to get a random value between -[minMax] and +[minMax].
   /// It can be either positive or negative.
-  int integer({int min, int max, int minMax}) {
+  static int integer({int min, int max, int minMax}) {
     _checkArguments(min: min, max: max, minMax: minMax);
 
     if (min == null && max == null && minMax == null) {
@@ -42,7 +41,7 @@ class Chance {
   /// Leave out all arguments to get a value between 0 and 1.
   /// Provide (only) [minMax] to get a random value between -[minMax] and +[minMax].
   /// It can be either positive or negative.
-  double floating({double min, double max, double minMax}) {
+  static double floating({double min, double max, double minMax}) {
     _checkArguments(min: min, max: max, minMax: minMax);
 
     if (min == null && max == null && minMax == null) {
@@ -63,7 +62,7 @@ class Chance {
   ///
   /// The default likelihood of success (returning true) is 50%.
   /// Set an optional [likelihood] from 0 to 100.
-  bool boolean({double likelihood}) {
+  static bool boolean({double likelihood}) {
     if (likelihood == null) {
       return _random.nextBool();
     }
@@ -75,7 +74,7 @@ class Chance {
     return _randomDouble * 100 < likelihood;
   }
 
-  void _checkArguments({num min, num max, num minMax}) {
+  static void _checkArguments({num min, num max, num minMax}) {
     if (minMax != null && (min != null || max != null)) {
       throw ArgumentError('minMax must not be provided along with other values.');
     }
@@ -89,5 +88,5 @@ class Chance {
     }
   }
 
-  double get _randomDouble => _random.nextDouble();
+  static double get _randomDouble => _random.nextDouble();
 }
