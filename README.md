@@ -7,7 +7,7 @@ It currently has only basic capabilities. Feel free to contribute.
 
 ## Usage
 
-```
+```dart
 import 'package:chance/chance.dart';
 
 int randomInteger = Chance.integer(min: 3, max: 12); // 5
