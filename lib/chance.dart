@@ -76,7 +76,8 @@ class Chance {
 
   static void _checkArguments({num min, num max, num minMax}) {
     if (minMax != null && (min != null || max != null)) {
-      throw ArgumentError('minMax must not be provided along with other values.');
+      throw ArgumentError(
+          'minMax must not be provided along with other values.');
     }
 
     if (min != null && max == null) {
