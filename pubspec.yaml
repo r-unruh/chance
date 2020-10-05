@@ -1,5 +1,5 @@
 name: chance
-version: 1.0.0+1
+version: 2.0.0
 description: A minimalist generator of random numbers - inspired by chance.js
 homepage: https://github.com/blausoft/chance
 
