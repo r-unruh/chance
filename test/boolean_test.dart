@@ -3,13 +3,12 @@ import 'package:test/test.dart';
 import 'package:chance/chance.dart';
 
 void main() {
-  final chance = Chance();
 
   test('without argument', () {
     var trueCount = 0;
 
     for (var i = 0; i < 100000; ++i)
-      if (chance.boolean())
+      if (Chance.boolean())
         ++trueCount;
 
     expect(trueCount, greaterThan(20000));
@@ -21,7 +20,7 @@ void main() {
     var falseCount = 0;
 
     for (var i = 0; i < 100000; ++i) {
-      if (chance.boolean(likelihood: 60))
+      if (Chance.boolean(likelihood: 60))
         ++trueCount;
       else
         ++falseCount;
@@ -35,7 +34,7 @@ void main() {
     var falseCount = 0;
 
     for (var i = 0; i < 100000; ++i) {
-      if (chance.boolean(likelihood: 40))
+      if (Chance.boolean(likelihood: 40))
         ++trueCount;
       else
         ++falseCount;
