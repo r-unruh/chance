@@ -1,3 +1,8 @@
+## 2.0.0
+
+* Breaking: Chance class is now static and no longer needs to be instantiated
+* Add example
+
 ## 1.0.0+1
 
 * Fix more hints
