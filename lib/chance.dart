@@ -18,7 +18,7 @@ class Chance {
   /// Leave out all arguments to get a value between [_minInt] and [_maxInt].
   /// Provide (only) [minMax] to get a random value between -[minMax] and +[minMax].
   /// It can be either positive or negative.
-  static int integer({int min, int max, int minMax}) {
+  static int integer({int? min, int? max, int? minMax}) {
     _checkArguments(min: min, max: max, minMax: minMax);
 
     if (min == null && max == null && minMax == null) {
@@ -32,7 +32,7 @@ class Chance {
       max = minMax.abs();
     }
 
-    return (_randomDouble * (max - min + 1) + min).floor();
+    return (_randomDouble * (max! - min! + 1) + min).floor();
   }
 
   /// Returns a random floating / double number.
@@ -41,7 +41,7 @@ class Chance {
   /// Leave out all arguments to get a value between 0 and 1.
   /// Provide (only) [minMax] to get a random value between -[minMax] and +[minMax].
   /// It can be either positive or negative.
-  static double floating({double min, double max, double minMax}) {
+  static double floating({double? min, double? max, double? minMax}) {
     _checkArguments(min: min, max: max, minMax: minMax);
 
     if (min == null && max == null && minMax == null) {
@@ -55,14 +55,14 @@ class Chance {
       max = minMax.abs();
     }
 
-    return _randomDouble * (max - min) + min;
+    return _randomDouble * (max! - min!) + min;
   }
 
   /// Returns a random boolean value (true or false).
   ///
   /// The default likelihood of success (returning true) is 50%.
   /// Set an optional [likelihood] from 0 to 100.
-  static bool boolean({double likelihood}) {
+  static bool boolean({double? likelihood}) {
     if (likelihood == null) {
       return _random.nextBool();
     }
@@ -74,7 +74,7 @@ class Chance {
     return _randomDouble * 100 < likelihood;
   }
 
-  static void _checkArguments({num min, num max, num minMax}) {
+  static void _checkArguments({num? min, num? max, num? minMax}) {
     if (minMax != null && (min != null || max != null)) {
       throw ArgumentError(
           'minMax must not be provided along with other values.');
