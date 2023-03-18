@@ -1,11 +1,10 @@
 name: chance
-version: 2.0.0
+version: 2.1.0
 description: A minimalist generator of random numbers - inspired by chance.js
-homepage: https://github.com/blausoft/chance
+homepage: https://github.com/r-unruh/chance
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: '>=2.12.0 <3.0.0'
 
-dependencies:
-  test: ^1.19.3
+dev_dependencies:
+  test: ^1.23.1
