@@ -1,13 +1,11 @@
 import 'package:chance/chance.dart';
 
-void main() {
-  int randomInteger = Chance.integer(min: 3, max: 12);
+int foo = randomInt(3, 12); // 6
 
-  double randomDouble = Chance.floating(min: 3, max: 12);
+double bar = randomDouble(3, 12); // 10.9634128828224
 
-  bool randomBool = Chance.boolean(likelihood: 30);
+bool lorem = randomBool(.2); // false
 
-  print('Random integer: $randomInteger\n'
-      'Random double: $randomDouble\n'
-      'Random boolean: $randomBool');
-}
+String ipsum = randomItem(['cat', 'dog', 'tiger']); // 'cat'
+
+String? dolor = randomItemOrNull([]); // null

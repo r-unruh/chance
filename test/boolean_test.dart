@@ -1,45 +1,34 @@
 import 'package:test/test.dart';
-
 import 'package:chance/chance.dart';
 
 void main() {
-
-  test('without argument', () {
+  test('works without argument', () {
     var trueCount = 0;
 
     for (var i = 0; i < 100000; ++i)
-      if (Chance.boolean())
+      if (randomBool())
         ++trueCount;
 
-    expect(trueCount, greaterThan(20000));
-    expect(trueCount, lessThan(80000));
+    expect(trueCount, inInclusiveRange(40000, 60000));
   });
 
-  test('more likely', () {
+  test('likeliness > 50%', () {
     var trueCount = 0;
-    var falseCount = 0;
 
-    for (var i = 0; i < 100000; ++i) {
-      if (Chance.boolean(likelihood: 60))
+    for (var i = 0; i < 100000; ++i)
+      if (randomBool(.6))
         ++trueCount;
-      else
-        ++falseCount;
-    }
 
-    expect(trueCount, greaterThan(falseCount));
+    expect(trueCount, greaterThan(50000));
   });
 
-  test('less likely', () {
+  test('likeliness < 50%', () {
     var trueCount = 0;
-    var falseCount = 0;
 
-    for (var i = 0; i < 100000; ++i) {
-      if (Chance.boolean(likelihood: 40))
+    for (var i = 0; i < 100000; ++i)
+      if (randomBool(.4))
         ++trueCount;
-      else
-        ++falseCount;
-    }
 
-    expect(trueCount, lessThan(falseCount));
+    expect(trueCount, lessThan(50000));
   });
 }
