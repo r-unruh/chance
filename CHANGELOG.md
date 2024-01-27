@@ -1,3 +1,6 @@
+## 3.0.1
+* Add migration guide
+
 ## 3.0.0
 ### BREAKING
 This is basically a complete rewrite and not compatible to the old interface at
@@ -12,6 +15,15 @@ all.
   * randomItem
   * randomItemOrNull
 * Update sdk constraints
+
+### Migration
+```dart
+Chance.integer(min: 3, max: 5)  --> randomInt(3, 5)
+Chance.integer(minMax: 3)       --> randomInt(-3, 3)
+Chance.floating(min: 3, max: 5) --> randomDouble(3, 5)
+Chance.floating(minMax: 3)      --> randomDouble(-3, 3)
+Chance.boolean(likelihood: 60)  --> randomBool(.6)
+```
 
 ## 2.1.0
 * Add null safety
