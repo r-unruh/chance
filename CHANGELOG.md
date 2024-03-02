@@ -1,3 +1,6 @@
+## 3.1.1
+* Fix description
+
 ## 3.1.0
 * Add randomString function
 
