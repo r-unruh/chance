@@ -1,6 +1,6 @@
 # chance
 
-## A minimalist set of random number generator functions
+## A minimalist set of functions to generate random numbers, strings etc.
 Provides common convenience methods for getting some randomness.
 
 This was initially inspired by the great JavaScript library chance.js but then
