@@ -1,3 +1,6 @@
+## 3.1.0
+* Add randomString function
+
 ## 3.0.1
 * Add migration guide
 

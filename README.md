@@ -1,6 +1,6 @@
 # chance
 
-## A minimalist collection of random number generator functions
+## A minimalist set of random number generator functions
 Provides common convenience methods for getting some randomness.
 
 This was initially inspired by the great JavaScript library chance.js but then
@@ -13,13 +13,15 @@ import 'package:chance/chance.dart';
 
 int foo = randomInt(3, 12); // 6
 
-double bar = randomDouble(3, 12); // 10.9634128828224
+double bar = randomDouble(10, 20); // 10.9634128828224
 
 bool lorem = randomBool(.2); // false
 
-String ipsum = randomItem(['cat', 'dog', 'tiger']); // 'cat'
+String ipsum = randomString(8); // 'Hxmde8XA'
 
-String? dolor = randomItemOrNull([]); // null
+String dolor = randomItem(['cat', 'dog', 'tiger']); // 'cat'
+
+dynamic sit = randomItemOrNull([]); // null
 ```
 
 That's it, that's the whole API. Enjoy!
