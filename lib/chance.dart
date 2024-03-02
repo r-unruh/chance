@@ -37,8 +37,8 @@ bool randomBool([double? likelihood]) {
 ///
 /// Is cryptographically insecure by default. Set [secure] to true to utilize
 /// [Random.secure]. You may provide a [pool] of characters to pick from.
-String randomString(int length, {
-    bool secure = false,
+String randomString(int length,
+    {bool secure = false,
     String pool =
         'abcdefghijklmnopqrstuvwxyzaBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'}) {
   final random = secure ? Random.secure() : _random;
