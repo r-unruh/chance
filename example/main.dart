@@ -1,11 +1,29 @@
 import 'package:chance/chance.dart';
 
-int foo = randomInt(3, 12); // 6
+String randomName() {
+  var name = '';
 
-double bar = randomDouble(3, 12); // 10.9634128828224
+  for (var i = 0; i < randomInt(2, 4); i++) {
+    final consonant = randomString(1, pool: 'bcdfghjklmnpqrstvwxz');
+    final vowel = randomString(1, pool: 'aeiou');
+    name += consonant + vowel;
+  }
 
-bool lorem = randomBool(.2); // false
+  return name;
+}
 
-String ipsum = randomItem(['cat', 'dog', 'tiger']); // 'cat'
+String randomDomain() {
+  final name = randomName();
+  final tld = randomItem(['com', 'net', 'org', 'me']);
+  return '$name.$tld';
+}
 
-String? dolor = randomItemOrNull([]); // null
+void main() {
+  final name = randomName();
+  final email = '$name@${randomDomain()}';
+  final password = randomString(12, secure: true);
+
+  print(name);
+  print(email);
+  print(password);
+}
