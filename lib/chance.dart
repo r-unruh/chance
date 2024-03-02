@@ -33,6 +33,18 @@ bool randomBool([double? likelihood]) {
   return _random.nextDouble() < likelihood;
 }
 
+/// Returns a random String with a set length.
+///
+/// Is cryptographically insecure by default. Set [secure] to true to utilize
+/// [Random.secure]. You may provide a [pool] of characters to pick from.
+String randomString(int length, {
+    bool secure = false,
+    String pool =
+        'abcdefghijklmnopqrstuvwxyzaBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'}) {
+  final random = secure ? Random.secure() : _random;
+  return List.generate(length, (i) => pool[random.nextInt(pool.length)]).join();
+}
+
 /// Picks a random item from a non-empty Iterable.
 T randomItem<T>(Iterable<T> pool) {
   if (pool.isEmpty) {
