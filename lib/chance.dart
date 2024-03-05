@@ -40,7 +40,7 @@ bool randomBool([double? likelihood]) {
 String randomString(int length,
     {bool secure = false,
     String pool =
-        'abcdefghijklmnopqrstuvwxyzaBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'}) {
+        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'}) {
   final random = secure ? Random.secure() : _random;
   return List.generate(length, (i) => pool[random.nextInt(pool.length)]).join();
 }

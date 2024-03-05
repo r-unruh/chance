@@ -1,3 +1,6 @@
+## 3.1.2
+* Fix randomString() default pool
+
 ## 3.1.1
 * Fix description
 
